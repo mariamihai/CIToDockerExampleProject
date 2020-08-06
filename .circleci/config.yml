@@ -45,8 +45,7 @@ jobs:
           name: Pushing image to Docker
           command: |
 
-            echo "I am here"
-            echo $PWD
+            echo "$(ls)"
 
             TAG="0.1.${CIRCLE_BUILD_NUM}"
             docker build -f ~/application/src/main/docker/Dockerfile -t $IMAGE_NAME:$TAG .
