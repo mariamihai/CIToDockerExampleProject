@@ -57,6 +57,9 @@
                 <version>0.33.0</version>
                 <configuration>
                     <verbose>true</verbose>
+                    <buildArgs>
+                        <ARTIFACT_ID>${project.artifactId}</ARTIFACT_ID>
+                    </buildArgs>
                     <images>
                         <image>
                             <name>${docker.image.prefix}/${docker.image.name}</name>
@@ -66,10 +69,10 @@
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>
                                 <dockerFile>Dockerfile</dockerFile>
-                                <tags>
-                                    <tag>latest</tag>
-                                    <tag>${project.version}</tag>
-                                </tags>
+<!--                                <tags>-->
+<!--                                    <tag>latest</tag>-->
+<!--                                    <tag>${project.version}</tag>-->
+<!--                                </tags>-->
                             </build>
                         </image>
                     </images>

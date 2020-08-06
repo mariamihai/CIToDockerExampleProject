@@ -1,10 +1,14 @@
 FROM openjdk:11-jre-slim as builder
+
+#Defined by the Maven Build Arguments in POM File
+ARG ARTIFACT_ID
+
 WORKDIR application
-ADD maven/${project.artifactId}.jar ${project.artifactId}.jar
-RUN java -Djarmode=layertools -jar ${project.artifactId}.jar extract
+ADD maven/${ARTIFACT_ID}.jar ${ARTIFACT_ID}.jar
+RUN java -Djarmode=layertools -jar ${ARTIFACT_ID}.jar extract
 
 FROM openjdk:11-jre-slim
-LABEL PROJECT_NAME=${project.artifactId} \
+LABEL PROJECT_NAME=${ARTIFACT_ID} \
       PROJECT=${project.id}
 
 EXPOSE 8080
