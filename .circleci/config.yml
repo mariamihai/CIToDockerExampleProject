@@ -44,14 +44,12 @@ jobs:
       - run:
           name: Pushing image to Docker
           command: |
-            TAG="0.1.${CIRCLE_BUILD_NUM}"
+            TAG="${VERSION}.${CIRCLE_BUILD_NUM}"
             docker build -f ~/application/src/main/docker/Dockerfile -t $IMAGE_NAME:$TAG .
 
             echo "Created $IMAGE_NAME:$TAG image"
 
             docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
-
-            echo "Login to Docker"
 
             docker push $IMAGE_NAME:$TAG
 

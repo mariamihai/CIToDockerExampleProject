@@ -44,13 +44,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <layers>
-                        <enabled>true</enabled>
-                        <includeLayerTools>true</includeLayerTools>
-                    </layers>
-                </configuration>
             </plugin>
+
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
@@ -71,10 +66,6 @@
                                     <descriptorRef>artifact</descriptorRef>
                                 </assembly>
                                 <dockerFile>Dockerfile</dockerFile>
-<!--                                <tags>-->
-<!--                                    <tag>latest</tag>-->
-<!--                                    <tag>${project.version}</tag>-->
-<!--                                </tags>-->
                             </build>
                         </image>
                     </images>
