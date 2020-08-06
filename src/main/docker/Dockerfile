@@ -6,7 +6,7 @@ ARG JAR_FILE
 
 WORKDIR application
 ADD ./target/${JAR_FILE} ${ARTIFACT_ID}.jar
-RUN java -Djarmode=layertools -jar ${project.artifactId}.jar extract
+#RUN java -Djarmode=layertools -jar ${project.artifactId}.jar extract
 
 FROM openjdk:11-jre-slim
 LABEL PROJECT_NAME=${project.artifactId} \
