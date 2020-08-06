@@ -3,7 +3,7 @@ ARG ARTIFACT_ID
 ARG PROJECT_ID
 ARG JAR_FILE
 
-WORKDIR application
+#WORKDIR application
 ADD ./target/${JAR_FILE} ${ARTIFACT_ID}.jar
 
 FROM openjdk:11-jre-slim
