@@ -59,6 +59,7 @@
                     <verbose>true</verbose>
                     <buildArgs>
                         <ARTIFACT_ID>${project.artifactId}</ARTIFACT_ID>
+                        <PROJECT_ID>${project.id}</PROJECT_ID>
                         <JAR_FILE>${project.artifactId}-${project.version}.jar</JAR_FILE>
                     </buildArgs>
                     <images>
