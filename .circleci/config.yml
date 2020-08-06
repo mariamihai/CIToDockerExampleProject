@@ -45,9 +45,8 @@ jobs:
           name: Pushing image to Docker
           command: |
             echo "Something here..."
-            echo "${CIRCLE_PROJECT_REPONAME}"
-            echo "${HOME}"
-            echo "${JAR_FILE}"
+            echo "${PROJECT_ID}"
+            echo "${CIRCLE_PROJECT_USERNAME}"
 
             TAG="0.1.${CIRCLE_BUILD_NUM}"
             docker build -f ~/application/src/main/docker/Dockerfile -t $IMAGE_NAME:$TAG .
