@@ -62,6 +62,7 @@ workflows:
   build-master:
     jobs:
       - build:
+          context: docker
           filters:
             branches:
               only: master
