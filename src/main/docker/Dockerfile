@@ -5,7 +5,7 @@ ARG ARTIFACT_ID
 ARG JAR_FILE
 
 WORKDIR application
-ADD application/maven/${JAR_FILE} ${ARTIFACT_ID}.jar
+ADD ./target/${JAR_FILE} ${ARTIFACT_ID}.jar
 RUN java -Djarmode=layertools -jar ${project.artifactId}.jar extract
 
 FROM openjdk:11-jre-slim

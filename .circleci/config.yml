@@ -45,7 +45,7 @@ jobs:
           name: Pushing image to Docker
           command: |
 
-            echo "$(ls)"
+            echo "$(ls -l | grep '^d' | awk '{ print $9 }')"
 
             TAG="0.1.${CIRCLE_BUILD_NUM}"
             docker build -f ~/application/src/main/docker/Dockerfile -t $IMAGE_NAME:$TAG .
