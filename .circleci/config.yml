@@ -49,7 +49,7 @@ jobs:
 
             echo "Created $IMAGE_NAME:$TAG image"
 
-            docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 
             echo "Login to Docker"
 
