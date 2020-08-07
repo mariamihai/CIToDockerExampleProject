@@ -74,26 +74,26 @@ jobs:
             docker push $IMAGE_NAME:latest
             docker push $IMAGE_NAME:$TAG
 
-publish-latest:
-  executor: docker-publisher
+  publish-tag:
+    executor: docker-publisher
 
-  steps:
-    - attach_workspace:
-        at: /tmp/workspace
-    - setup_remote_docker
-    - run:
-        name: Load archived Docker Image
-        command: docker load -i /tmp/workspace/image.tar
-    - run:
-        name: Publish Docker Image to Docker Hub
-        command: |
-          docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - setup_remote_docker
+      - run:
+          name: Load archived Docker Image
+          command: docker load -i /tmp/workspace/image.tar
+      - run:
+          name: Publish Docker Image to Docker Hub
+          command: |
+            docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
 
-          IMAGE_TAG=${CIRCLE_TAG/v/''}
+            IMAGE_TAG=${CIRCLE_TAG/v/''}
 
-          docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
-          docker push $IMAGE_NAME:latest
-          docker push $IMAGE_NAME:$TAG
+            docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
+            docker push $IMAGE_NAME:latest
+            docker push $IMAGE_NAME:$TAG
 
 workflows:
   version: 2
