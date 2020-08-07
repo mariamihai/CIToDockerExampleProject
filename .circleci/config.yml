@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build -t $IMAGE_NAME:latest .
+            docker build -f ~/application/src/main/docker/Dockerfile -t $IMAGE_NAME:latest .
       - run:
           name: Archive Docker Image
           command: docker save -o image.tar $IMAGE_NAME
