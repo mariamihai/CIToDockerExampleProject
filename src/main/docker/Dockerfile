@@ -1,7 +1,6 @@
 FROM openjdk:11-jre-slim
 
 ARG ARTIFACT_ID
-ARG PROJECT_ID
 ARG JAR_FILE
 
 ADD ./target/${JAR_FILE} ${ARTIFACT_ID}.jar
