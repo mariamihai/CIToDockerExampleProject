@@ -49,7 +49,7 @@ jobs:
 
             docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
 
-            docker tag $IMAGE_NAME:latest $IMAGE_NAME:$IMAGE_TAG
+            docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
             docker push $IMAGE_NAME:latest
             docker push $IMAGE_NAME:$TAG
 
