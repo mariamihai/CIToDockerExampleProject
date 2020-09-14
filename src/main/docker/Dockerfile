@@ -4,7 +4,12 @@ ARG ARTIFACT_ID
 ARG JAR_FILE
 
 ADD ./target/${JAR_FILE} ${ARTIFACT_ID}.jar
+
+
+RUN sleep 5
+
 COPY ./target/${JAR_FILE} app.jar
+
 
 RUN echo $(ls)
 
