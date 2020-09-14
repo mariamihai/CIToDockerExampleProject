@@ -53,7 +53,6 @@
                 <configuration>
                     <verbose>true</verbose>
                     <buildArgs>
-                        <ARTIFACT_ID>${project.artifactId}</ARTIFACT_ID>
                         <JAR_FILE>${project.artifactId}-${project.version}.jar</JAR_FILE>
                     </buildArgs>
                     <images>
