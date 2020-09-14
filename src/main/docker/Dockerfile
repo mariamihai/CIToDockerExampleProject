@@ -3,10 +3,9 @@ FROM openjdk:11-jre-slim
 ARG ARTIFACT_ID
 ARG JAR_FILE
 
-ADD ./target/${JAR_FILE} ${ARTIFACT_ID}.jar
+ADD maven/${JAR_FILE} ${ARTIFACT_ID}.jar
 
 RUN echo ${JAR_FILE}
-RUN echo ./target
 
 RUN sleep 5
 
