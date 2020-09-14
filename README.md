@@ -12,7 +12,7 @@ docker pull mariamihai/ci-to-docker-example-project
 
 Run a container:
 ```
-docker run -d mariamihai/ci-to-docker-example-project
+docker run -d -p 8080:8080 mariamihai/ci-to-docker-example-project
 ```
 
 Go to [http://localhost:8080/hello](http://localhost:8080/hello). You will receive an "Hello" from the application.
