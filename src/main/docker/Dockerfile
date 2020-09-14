@@ -5,11 +5,13 @@ ARG JAR_FILE
 
 ADD maven/${JAR_FILE} ${ARTIFACT_ID}.jar
 
+RUN echo $(ls)
 RUN echo ${JAR_FILE}
 
 RUN sleep 5
 
-COPY ${ARTIFACT_ID}.jar app.jar
+
+ADD maven/${JAR_FILE} app.jar
 
 RUN sleep 5
 
