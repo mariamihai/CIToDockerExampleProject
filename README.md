@@ -1,11 +1,16 @@
 [![CircleCI](https://circleci.com/gh/mariamihai/CIToDockerExampleProject.svg?style=svg)](https://circleci.com/gh/mariamihai/CIToDockerExampleProject)
-[![Docker](https://img.shields.io/docker/v/mariamihai/sbm-beer-service?sort=date)](https://hub.docker.com/r/mariamihai/sbm-beer-service)
+[![Docker](https://img.shields.io/docker/v/mariamihai/ci-to-docker-example-project?sort=date)](https://hub.docker.com/r/mariamihai/ci-to-docker-example-project)
 
 # Simple CI to Docker Image project
 This is a simple application I used to learn the processes used by CircleCI and to help me build and push a simple Docker image.
 
 ## Using the application
-Pull the image from the Docker Hub:
+Creating Docker image:
+```
+mvn clean package docker:build
+```
+
+Or pull the image from the Docker Hub:
 ```
 docker pull mariamihai/ci-to-docker-example-project
 ```

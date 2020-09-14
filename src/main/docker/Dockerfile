@@ -4,7 +4,7 @@ ARG JAR_FILE
 
 COPY ./target/${JAR_FILE} app.jar
 
-RUN sleep 5
+RUN echo $(ls)
 
 EXPOSE 8080
 
