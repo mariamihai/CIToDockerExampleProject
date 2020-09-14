@@ -3,7 +3,7 @@ FROM openjdk:11-jre-slim
 ARG ARTIFACT_ID
 ARG JAR_FILE
 
-ADD maven/${JAR_FILE} app.jar
+ADD ./target/${JAR_FILE} app.jar
 
 EXPOSE 8080
 
